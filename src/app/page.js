@@ -1,5 +1,7 @@
 import AvailableCars from "@/components/AvailableCars";
 import Banner from "@/components/Banner";
+import HowItWorks from "@/components/HowItWorks";
+import WhyCarFleet from "@/components/WhyCarFleet";
 
 export default function Home() {
   return (
@@ -7,6 +9,8 @@ export default function Home() {
       <main className="flex flex-1 w-full flex-col items-center justify-between bg-white dark:bg-black ">
         <Banner/>
         <AvailableCars/>
+        <WhyCarFleet/>
+        <HowItWorks/>
       </main>
     </div>
   );
