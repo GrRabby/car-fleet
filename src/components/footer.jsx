@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import logo from '../assets/logo.png';
 import { Mail, Phone } from 'lucide-react';
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { FaX } from 'react-icons/fa6';
 
 const Footer = () => {
@@ -160,7 +160,7 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                         <div className="flex items-center gap-4">
                             <p className="text-[11px] font-mono text-zinc-500 uppercase tracking-wider">
-                                © 2026 CarFleet. All systems operational.
+                                © 2026 CarFleet. All rights reserved.
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
