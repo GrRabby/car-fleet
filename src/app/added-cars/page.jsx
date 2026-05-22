@@ -115,7 +115,7 @@ export default function MyAddedCars() {
         );
     }
     return (
-        <div className="min-h-screen bg-zinc-100 relative overflow-hidden py-12 lg:py-16">
+        <div className="min-h-screen bg-zinc-100 relative overflow-hidden py-12 lg:py-16 animate-[slideUp_0.3s_cubic-bezier(0.34,1.2,0.64,1)]">
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
                 backgroundImage: `linear-gradient(rgba(239,68,68,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(239,68,68,0.5) 1px, transparent 1px)`,
                 backgroundSize: '40px 40px',

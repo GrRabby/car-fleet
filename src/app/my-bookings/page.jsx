@@ -91,7 +91,7 @@ export default function MyBookings() {
     if (!session) return null;
 
     return (
-        <div className="min-h-screen bg-zinc-100 relative overflow-hidden py-12 lg:py-16">
+        <div className="min-h-screen bg-zinc-100 relative overflow-hidden py-12 lg:py-16 animate-[slideUp_0.3s_cubic-bezier(0.34,1.2,0.64,1)]">
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
                 backgroundImage: `linear-gradient(rgba(239,68,68,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(239,68,68,0.5) 1px, transparent 1px)`,
                 backgroundSize: '40px 40px',
@@ -244,8 +244,8 @@ const CancelModal = ({ booking, onCancel, onConfirm }) => {
     const totalPrice = (booking.pricePerDay || 0) + driverFee;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/70 backdrop-blur-sm">
-            <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-zinc-200 overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/70 backdrop-blur-sm animate-[fadeIn_0.2s_ease-out]">
+            <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-zinc-200 overflow-hidden animate-[slideUp_0.3s_cubic-bezier(0.34,1.2,0.64,1)]">
                 <div className="p-6 bg-linear-to-br from-red-50 to-orange-50 border-b border-red-200 text-center">
                     <div className="inline-flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-3">
                         <AlertTriangle size={24} className="text-red-600" strokeWidth={2.5} />

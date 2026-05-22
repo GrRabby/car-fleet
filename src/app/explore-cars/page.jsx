@@ -53,20 +53,10 @@ export default function ExploreCars() {
         setShowUnavailable(true);
         setSortBy('newest');
     };
-    if (loading) {
-        return (
-            <div className="min-h-screen bg-zinc-100 flex items-center justify-center">
-                <div className="text-center">
-                    <Loader2 className="w-12 h-12 text-red-600 animate-spin mx-auto mb-4" />
-                    <p className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500 font-bold">Loading Fleets</p>
-                </div>
-            </div>
-        );
-    }
     const hasActiveFilters = searchQuery || carType !== 'All' || !showUnavailable;
 
     return (
-        <div className="min-h-screen bg-zinc-100 relative overflow-hidden py-12 lg:py-16">
+        <div className="min-h-screen bg-zinc-100 relative overflow-hidden py-12 lg:py-16 animate-[slideUp_0.3s_cubic-bezier(0.34,1.2,0.64,1)]">
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
                 backgroundImage: `linear-gradient(rgba(239,68,68,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(239,68,68,0.5) 1px, transparent 1px)`,
                 backgroundSize: '40px 40px',
@@ -227,36 +217,45 @@ export default function ExploreCars() {
                         </button>
                     )}
                 </div>
-                {cars.length === 0 ? (
-                    <div className="bg-white border-2 border-dashed border-zinc-300 rounded-2xl py-20 px-6 text-center">
-                        <div className="inline-flex items-center justify-center w-16 h-16 bg-zinc-100 rounded-full mb-4">
-                            <PackageX size={28} className="text-zinc-400" strokeWidth={1.5} />
-                        </div>
-                        <h3 className="text-lg font-black text-zinc-900 uppercase tracking-tight mb-2">
-                            {hasActiveFilters ? 'No cars match your search' : 'No cars available'}
-                        </h3>
-                        <p className="text-sm text-zinc-500 max-w-sm mx-auto mb-6">
-                            {hasActiveFilters
-                                ? 'Try adjusting your search or filters. Maybe broaden your criteria.'
-                                : 'Check back soon — new cars are added regularly.'}
-                        </p>
-                        {hasActiveFilters && (
-                            <button
-                                onClick={clearFilters}
-                                className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white text-xs font-black uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-red-600/30 transition-all"
-                            >
-                                <X size={14} strokeWidth={3} />
-                                Clear All Filters
-                            </button>
-                        )}
-                    </div>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {cars.map((car, index) => (
-                            <CarCard key={car._id} car={car} index={index} />
-                        ))}
-                    </div>
-                )}
+                {
+                    loading ?
+                        (<div className="min-h-screen bg-zinc-100 flex items-start justify-center mt-30">
+                            <div className="text-center">
+                                <Loader2 className="w-12 h-12 text-red-600 animate-spin mx-auto mb-4" />
+                                <p className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500 font-bold">Loading Fleets</p>
+                            </div>
+                        </div>) :
+                        cars.length === 0 ? (
+                            <div className="bg-white border-2 border-dashed border-zinc-300 rounded-2xl py-20 px-6 text-center">
+                                <div className="inline-flex items-center justify-center w-16 h-16 bg-zinc-100 rounded-full mb-4">
+                                    <PackageX size={28} className="text-zinc-400" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-lg font-black text-zinc-900 uppercase tracking-tight mb-2">
+                                    {hasActiveFilters ? 'No cars match your search' : 'No cars available'}
+                                </h3>
+                                <p className="text-sm text-zinc-500 max-w-sm mx-auto mb-6">
+                                    {hasActiveFilters
+                                        ? 'Try adjusting your search or filters. Maybe broaden your criteria.'
+                                        : 'Check back soon — new cars are added regularly.'}
+                                </p>
+                                {hasActiveFilters && (
+                                    <button
+                                        onClick={clearFilters}
+                                        className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white text-xs font-black uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-red-600/30 transition-all"
+                                    >
+                                        <X size={14} strokeWidth={3} />
+                                        Clear All Filters
+                                    </button>
+                                )}
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {cars.map((car, index) => (
+                                    <CarCard key={car._id} car={car} index={index} />
+                                ))}
+                            </div>
+                        )
+                }
             </div>
         </div>
     );

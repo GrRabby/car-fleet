@@ -108,7 +108,7 @@ export default function CarDetails() {
     const isUnavailable = car.availability === 'unavailable';
 
     return (
-        <div className="min-h-screen bg-zinc-100 relative overflow-hidden py-8 lg:py-12">
+        <div className="min-h-screen bg-zinc-100 relative overflow-hidden py-8 lg:py-12 animate-[slideUp_0.3s_cubic-bezier(0.34,1.2,0.64,1)]">
             <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
                 backgroundImage: `linear-gradient(rgba(239,68,68,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(239,68,68,0.5) 1px, transparent 1px)`,
                 backgroundSize: '40px 40px',
@@ -417,8 +417,8 @@ const BookingModal = ({ car, session, onClose }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/70 backdrop-blur-sm">
-            <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-zinc-200 max-h-[90vh] overflow-hidden flex flex-col">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/70 backdrop-blur-sm animate-[fadeIn_0.2s_ease-out]">
+            <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-zinc-200 max-h-[90vh] overflow-hidden flex flex-col animate-[slideUp_0.3s_cubic-bezier(0.34,1.2,0.64,1)]">
                 <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 bg-linear-to-r from-zinc-50 to-white">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-lg bg-linear-to-br from-red-500 to-red-700 flex items-center justify-center shadow-md shadow-red-500/30">
