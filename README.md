@@ -280,9 +280,8 @@ MIT License — see [LICENSE](./LICENSE) for details.
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourusername)
-- Portfolio: [yoursite.com](https://yoursite.com)
+- GitHub: [@GrRabby](https://github.com/GrRabby)
+- LinkedIn: [Gulam Robbani](https://linkedin.com/in/gulam-robbani/)
 
 ---
 
