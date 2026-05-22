@@ -1,6 +1,7 @@
 import AvailableCars from "@/components/AvailableCars";
 import Banner from "@/components/Banner";
 import HowItWorks from "@/components/HowItWorks";
+import ScrollToTop from "@/components/ScrollToTop";
 import WhyCarFleet from "@/components/WhyCarFleet";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         <AvailableCars/>
         <WhyCarFleet/>
         <HowItWorks/>
+        <ScrollToTop />
       </main>
     </div>
   );
