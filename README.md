@@ -1,4 +1,4 @@
-<img width="1901" height="638" alt="Screenshot 2026-05-22 173845" src="https://github.com/user-attachments/assets/7b0d55c3-d0e1-4e4e-9ba4-e0e548c7fab1" /># 🚗 CarFleet — Car Rental Platform
+# 🚗 CarFleet — Car Rental Platform
 
 A modern, full-stack car rental marketplace where users can browse, book, and list vehicles for rent. Built with a cockpit-inspired UI featuring molded buttons, telemetry-style readouts, and a premium automotive aesthetic.
 
